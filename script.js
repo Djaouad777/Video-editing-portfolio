@@ -1,6 +1,8 @@
 /* =====================================================
    MODIFIEZ VOS VIDÉOS ICI  (format vertical 9:16)
-   cat:    "Reels" | "Hypermotion IA"   (crée automatiquement les filtres)
+   id:     identifiant unique (ex: "reel-1") — le titre et la description
+           de chaque vidéo (FR + EN) se modifient dans i18n.js, section PROJETS
+   cat:    "Reels" | "Hypermotion IA" | "AI UGC"   (crée automatiquement les filtres)
    type:   "file" (fichier .mp4) | "youtube" | "vimeo"
    src:    chemin du .mp4 (ex: "videos/reel-1.mp4"), ou ID YouTube / Vimeo
    thumb:  image de couverture ("" = vignette de couleur)
@@ -10,16 +12,16 @@ const reel = { type: "file", src: "", vertical: true };   // showreel (section m
 
 const palette = ["#ffd3c4", "#cfd6ff", "#e4fba6", "#e3d8ff", "#ffeaa6", "#ffd0e2"];   // couleurs des vignettes (tant qu'il n'y a pas d'image)
 const projects = [
-  { title: "Reel 01", cat: "Reels", client: "", year: "2026", dur: "0:33", tools: "", desc: "", type: "file", src: "videos/reel-1.mp4", thumb: "images/reel-1.jpg", preview: "", vertical: true },
-  { title: "Reel 02", cat: "Reels", client: "", year: "2026", dur: "0:26", tools: "", desc: "", type: "file", src: "videos/reel-2.mp4", thumb: "images/reel-2.jpg", preview: "", vertical: true },
-  { title: "Maruderm", cat: "Reels", client: "Maruderm", year: "2026", dur: "0:46", tools: "", desc: "", type: "file", src: "videos/reel-3.mp4", thumb: "images/reel-3.jpg", preview: "", vertical: true },
-  { title: "Reel 04", cat: "Reels", client: "", year: "2026", dur: "1:04", tools: "", desc: "", type: "file", src: "videos/reel-4.mp4", thumb: "images/reel-4.jpg", preview: "", vertical: true },
-  { title: "Hypermotion 01", cat: "Hypermotion IA", client: "", year: "2026", dur: "0:20", tools: "IA générative", desc: "", type: "file", src: "videos/ai-1.mp4", thumb: "images/ai-1.jpg", preview: "", vertical: true },
-  { title: "Hypermotion 02", cat: "Hypermotion IA", client: "", year: "2026", dur: "0:15", tools: "IA générative", desc: "", type: "file", src: "videos/ai-2.mp4", thumb: "images/ai-2.jpg", preview: "", vertical: true },
-  { title: "UGC IA 01", cat: "AI UGC", client: "", year: "2026", dur: "0:15", tools: "IA générative", desc: "", type: "file", src: "videos/ugc-1.mp4", thumb: "images/ugc-1.jpg", preview: "", vertical: true },
-  { title: "UGC IA 02", cat: "AI UGC", client: "Glow Me", year: "2026", dur: "0:15", tools: "IA générative", desc: "", type: "file", src: "videos/ugc-2.mp4", thumb: "images/ugc-2.jpg", preview: "", vertical: true },
-  /* Pour ajouter une vidéo, copiez une ligne ci-dessus, puis changez title, cat ("Reels", "Hypermotion IA" ou "AI UGC"), src et thumb.
-     Renseignez client / tools / desc si vous voulez les afficher dans le lecteur. */
+  { id: "reel-1", cat: "Reels",          client: "",         year: "2026", dur: "0:33", type: "file", src: "videos/reel-1.mp4", thumb: "images/reel-1.jpg", preview: "", vertical: true },
+  { id: "reel-2", cat: "Reels",          client: "",         year: "2026", dur: "0:26", type: "file", src: "videos/reel-2.mp4", thumb: "images/reel-2.jpg", preview: "", vertical: true },
+  { id: "reel-3", cat: "Reels",          client: "Maruderm", year: "2026", dur: "0:46", type: "file", src: "videos/reel-3.mp4", thumb: "images/reel-3.jpg", preview: "", vertical: true },
+  { id: "reel-4", cat: "Reels",          client: "",         year: "2026", dur: "1:04", type: "file", src: "videos/reel-4.mp4", thumb: "images/reel-4.jpg", preview: "", vertical: true },
+  { id: "ai-1",   cat: "Hypermotion IA", client: "",         year: "2026", dur: "0:20", type: "file", src: "videos/ai-1.mp4",   thumb: "images/ai-1.jpg",   preview: "", vertical: true },
+  { id: "ai-2",   cat: "Hypermotion IA", client: "",         year: "2026", dur: "0:15", type: "file", src: "videos/ai-2.mp4",   thumb: "images/ai-2.jpg",   preview: "", vertical: true },
+  { id: "ugc-1",  cat: "AI UGC",         client: "",         year: "2026", dur: "0:15", type: "file", src: "videos/ugc-1.mp4",  thumb: "images/ugc-1.jpg",  preview: "", vertical: true },
+  { id: "ugc-2",  cat: "AI UGC",         client: "Glow Me",  year: "2026", dur: "0:15", type: "file", src: "videos/ugc-2.mp4",  thumb: "images/ugc-2.jpg",  preview: "", vertical: true },
+  /* Pour ajouter une vidéo : copiez une ligne, changez id, cat, src et thumb,
+     puis ajoutez son titre et sa description dans i18n.js (section PROJETS, en FR et en EN). */
 ];
 
 /* ===================================================== */
@@ -44,41 +46,56 @@ $$('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
   closeMenu();
 }));
 
-/* ---------- build work ---------- */
+/* ---------- build work (re-rendered when the language changes) ---------- */
 const grid = $("#grid"), filters = $("#filters");
-const cats = ["Tous", ...new Set(projects.map(p => p.cat))];
-filters.innerHTML = cats.map((c, i) => `<button class="${i ? "" : "on"}" data-f="${c}" role="tab">${c}</button>`).join("");
-grid.innerHTML = projects.map((p, i) => `
-  <a class="card ${i % 2 ? "offset" : ""}" href="#" data-i="${i}" data-cat="${p.cat}" data-cursor="Voir">
+const catKeys = [...new Set(projects.map(p => p.cat))];
+let activeFilter = "all";
+const txt = p => Object.assign({ title: p.id, desc: "", tools: "" }, I18N.proj(p.id));
+
+function applyFilter() {
+  $$(".card", grid).forEach(c => c.classList.toggle("hide", !(activeFilter === "all" || c.dataset.cat === activeFilter)));
+}
+function renderWork() {
+  filters.innerHTML = ["all", ...catKeys].map(k =>
+    `<button class="${k === activeFilter ? "on" : ""}" data-f="${k}" role="tab">${k === "all" ? I18N.t("filter.all") : I18N.cat(k)}</button>`).join("");
+  filters.style.display = catKeys.length <= 1 ? "none" : "";   // un seul type de vidéo : pas de filtres
+  grid.innerHTML = projects.map((p, i) => { const x = txt(p); return `
+  <a class="card" href="#" data-i="${i}" data-cat="${p.cat}" data-cursor="${I18N.t("m.view")}">
     <div class="media"><span class="play"></span><div class="media-in">
-      ${p.thumb ? `<img src="${p.thumb}" alt="${p.title}" loading="lazy">` : `<div class="ph" data-n="${String(i + 1).padStart(2, "0")}" style="--c:${p.color || palette[i % palette.length]}"></div>`}
+      ${p.thumb ? `<img src="${p.thumb}" alt="${x.title}" loading="lazy">` : `<div class="ph" data-n="${String(i + 1).padStart(2, "0")}" style="--c:${p.color || palette[i % palette.length]}"></div>`}
       ${(p.preview || (p.type === "file" && p.src)) ? `<video src="${p.preview || p.src}" muted loop playsinline preload="metadata"></video>` : ""}
     </div></div>
-    <div class="cap"><span class="n">${String(i + 1).padStart(2, "0")}</span><h3>${p.title}</h3><span class="m">${p.cat}</span></div>
-  </a>`).join("");
-
-if (cats.length <= 2) filters.style.display = "none";   // un seul type de vidéo : pas besoin de filtres
+    <div class="cap"><span class="n">${String(i + 1).padStart(2, "0")}</span><h3>${x.title}</h3><span class="m">${I18N.cat(p.cat)}</span>${x.desc ? `<p class="d">${x.desc}</p>` : ""}</div>
+  </a>`; }).join("");
+  applyFilter();
+}
+renderWork();
+I18N.onChange(() => { renderWork(); hasGsap && ScrollTrigger.refresh(); });
 
 filters.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
+  activeFilter = b.dataset.f;
   $$("button", filters).forEach(x => x.classList.toggle("on", x === b));
-  $$(".card", grid).forEach(c => c.classList.toggle("hide", !(b.dataset.f === "Tous" || c.dataset.cat === b.dataset.f)));
-  $$(".card:not(.hide)", grid).forEach((c, i) => c.classList.toggle("offset", i % 2 === 1));
+  applyFilter();
   hasGsap && ScrollTrigger.refresh();
   hasGsap && gsap.fromTo($$(".card:not(.hide)", grid), { opacity: 0 }, { opacity: 1, duration: .7, stagger: .05, ease: "power2.out" });
 });
 
-$$(".card").forEach(c => {
-  const v = $("video", c);
-  c.addEventListener("mouseenter", () => v && v.play().catch(() => {}));
-  c.addEventListener("mouseleave", () => v && (v.pause(), (v.currentTime = 0)));
+/* hover preview (delegated, so it survives re-renders) */
+grid.addEventListener("mouseover", e => {
+  const c = e.target.closest(".card"); if (!c || c.contains(e.relatedTarget)) return;
+  const v = $("video", c); v && v.play().catch(() => {});
+});
+grid.addEventListener("mouseout", e => {
+  const c = e.target.closest(".card"); if (!c || c.contains(e.relatedTarget)) return;
+  const v = $("video", c); if (v) { v.pause(); v.currentTime = 0; }
 });
 
 /* ---------- player modal ---------- */
 const modal = $("#modal"), player = $("#player");
 let lastFocus = null;
 function embed(o) {
-  if (!o.src) return `<div class="empty">Pas encore de vidéo.<br>Renseignez <code>src</code> dans <code>script.js</code> (ID YouTube, ID Vimeo ou chemin .mp4).</div>`;
+  if (!o.src) return `<div class="empty">${I18N.t("m.empty")}</div>`;
   if (o.type === "youtube") return `<iframe src="https://www.youtube.com/embed/${o.src}?autoplay=1&rel=0&modestbranding=1" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="Vidéo"></iframe>`;
   if (o.type === "vimeo") return `<iframe src="https://player.vimeo.com/video/${o.src}?autoplay=1" allow="autoplay;fullscreen" allowfullscreen title="Vidéo"></iframe>`;
   return `<video src="${o.src}" autoplay playsinline loop></video>`;
@@ -101,8 +118,8 @@ function closeModal() {
 }
 grid.addEventListener("click", e => {
   const c = e.target.closest(".card"); if (!c) return; e.preventDefault();
-  const p = projects[+c.dataset.i];
-  openModal(p, { title: p.title, desc: p.desc, rows: [["Client", p.client], ["Année", p.year], ["Catégorie", p.cat], ["Outils", p.tools], ["Durée", p.dur]].filter(r => r[1]) });
+  const p = projects[+c.dataset.i], x = txt(p), t = I18N.t;
+  openModal(p, { title: x.title, desc: x.desc, rows: [[t("m.client"), p.client], [t("m.year"), p.year], [t("m.cat"), I18N.cat(p.cat)], [t("m.tools"), x.tools], [t("m.dur"), p.dur]].filter(r => r[1]) });
 });
 $("#reelFrame").addEventListener("click", () => openModal(reel, { title: "Showreel", desc: "Une sélection de projets récents.", rows: [["Année", new Date().getFullYear()]] }));
 modal.addEventListener("click", e => e.target.closest("[data-close]") && closeModal());

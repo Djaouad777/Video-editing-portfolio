@@ -1,0 +1,16 @@
+/* ===== language switch (FR / EN) ===== */
+.nav-end{display:flex;align-items:center;gap:12px;justify-self:end}
+.nav-end .nav-time{justify-self:auto;padding-right:0}
+.lang{display:inline-flex;padding:3px;border-radius:99px;background:rgba(14,14,14,.07)}
+.lang button{padding:7px 12px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:.05em;color:rgba(14,14,14,.55);transition:background .4s var(--out),color .3s,box-shadow .4s}
+.lang button:hover{color:#0e0e0e}
+.lang button.on{background:#0e0e0e;color:#fff;box-shadow:0 6px 14px -8px rgba(14,14,14,.6)}
+
+/* ===== short description under each project ===== */
+.cap .d{grid-column:1/-1;margin:2px 0 0;font-size:13px;line-height:1.45;color:var(--mute);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cap{row-gap:6px}
+
+@media(max-width:700px){
+  .cap .d{font-size:12.5px;-webkit-line-clamp:6}
+  .lang button{padding:7px 10px}
+}
