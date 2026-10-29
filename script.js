@@ -14,8 +14,8 @@ const palette = ["#ffd3c4", "#cfd6ff", "#e4fba6", "#e3d8ff", "#ffeaa6", "#ffd0e2
 const projects = [
   { id: "reel-1", cat: "Reels",          client: "",         year: "2026", dur: "0:33", type: "file", src: "videos/reel-1.mp4", thumb: "images/reel-1.jpg", preview: "", vertical: true },
   { id: "reel-2", cat: "Reels",          client: "",         year: "2026", dur: "0:26", type: "file", src: "videos/reel-2.mp4", thumb: "images/reel-2.jpg", preview: "", vertical: true },
-  { id: "reel-3", cat: "Reels",          client: "Maruderm", year: "2026", dur: "0:46", type: "file", src: "videos/reel-3.mp4", thumb: "images/reel-3.jpg", preview: "", vertical: true },
   { id: "reel-5", cat: "Reels",          client: "",         year: "2026", dur: "0:30", type: "file", src: "videos/reel-5.mp4", thumb: "images/reel-5.jpg", preview: "", vertical: true },
+  { id: "reel-3", cat: "Reels",          client: "Maruderm", year: "2026", dur: "0:46", type: "file", src: "videos/reel-3.mp4", thumb: "images/reel-3.jpg", preview: "", vertical: true },
   { id: "reel-4", cat: "Reels",          client: "",         year: "2026", dur: "1:04", type: "file", src: "videos/reel-4.mp4", thumb: "images/reel-4.jpg", preview: "", vertical: true },
   { id: "ai-1",   cat: "Hypermotion IA", client: "",         year: "2026", dur: "0:20", type: "file", src: "videos/ai-1.mp4",   thumb: "images/ai-1.jpg",   preview: "", vertical: true },
   { id: "ai-2",   cat: "Hypermotion IA", client: "",         year: "2026", dur: "0:15", type: "file", src: "videos/ai-2.mp4",   thumb: "images/ai-2.jpg",   preview: "", vertical: true },
