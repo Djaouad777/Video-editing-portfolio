@@ -1,163 +1,282 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Djaouad — Monteur vidéo</title>
-<meta name="description" content="Monteur vidéo : Reels, vidéos produit en hypermotion IA et UGC IA. Sélection de projets.">
-<meta name="theme-color" content="#f3efe6">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Djaouad Hassounat — Social Media Video Editor &amp; Creative Video Producer</title>
+<meta name="description" content="Social media video editor and creative video producer from Algeria, open to full-time remote roles. DTC video ads, UGC-style content, short-form social video and AI-assisted production for brands and agencies.">
+<meta name="author" content="Djaouad Hassounat">
+<meta name="theme-color" content="#f6f2ea">
+<script>try{if(localStorage.getItem("dj-theme")==="dark"){document.documentElement.dataset.theme="dark";}}catch(e){}</script>
+<link rel="canonical" href="https://djaouad777.github.io/Video-editing-portfolio/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Djaouad Hassounat">
+<meta property="og:title" content="Djaouad Hassounat — Social Media Video Editor &amp; Creative Video Producer">
+<meta property="og:description" content="DTC video ads, UGC-style content, short-form social video and AI-assisted production. Open to full-time remote roles.">
+<meta property="og:url" content="https://djaouad777.github.io/Video-editing-portfolio/">
+<meta property="og:image" content="https://djaouad777.github.io/Video-editing-portfolio/media/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Djaouad Hassounat — Social Media Video Editor">
+<meta name="twitter:description" content="DTC video ads, UGC-style content, short-form social video and AI-assisted production.">
+<meta name="twitter:image" content="https://djaouad777.github.io/Video-editing-portfolio/media/og-cover.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="contact.css">
-<link rel="stylesheet" href="mobile.css">
-<link rel="stylesheet" href="theme.css">
-<link rel="stylesheet" href="player.css">
-<link rel="stylesheet" href="about.css">
-<link rel="stylesheet" href="lang.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Djaouad Hassounat",
+  "jobTitle": "Social Media Video Editor & Creative Video Producer",
+  "description": "Video editor specialising in DTC video ads, UGC-style content, short-form social video and AI-assisted production.",
+  "url": "https://djaouad777.github.io/Video-editing-portfolio/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Algiers", "addressCountry": "DZ" },
+  "sameAs": ["https://www.linkedin.com/in/djaouad-hassounat-b3a7a9420"],
+  "knowsLanguage": ["en", "fr", "ar"],
+  "knowsAbout": ["Video editing", "DTC advertising", "UGC", "Short-form video", "AI video production"]
+}
+</script>
 </head>
-<body class="is-loading">
+<body>
+<a class="skip" href="#work" data-i18n="skip">Skip to content</a>
 
-<div class="loader" id="loader">
-  <span class="loader-name">Djaouad</span>
-  <span class="loader-count"><b id="loadNum">0</b>%</span>
-</div>
-<div class="curtain" id="curtain"></div>
-<div class="cursor" id="cursor"><span id="cursorLabel"></span></div>
-
+<!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a href="#top" class="nav-name">Djaouad</a>
-  <nav class="nav-links" id="links">
-    <a href="#work" data-i18n="nav.work">Projets</a>
-    <a href="#about" data-i18n="nav.about">À propos</a>
-    <a href="#services" data-i18n="nav.services">Services</a>
+  <a class="brand" href="#top" aria-label="Djaouad Hassounat — home"><span class="rec" aria-hidden="true"></span>Djaouad Hassounat</a>
+  <nav class="menu" id="menu" aria-label="Primary">
+    <a href="#results" data-i18n="nav.results">Results</a>
+    <a href="#work" data-i18n="nav.work">Work</a>
+    <a href="#brands" data-i18n="nav.brands">Brands</a>
+    <a href="#about" data-i18n="nav.about">About</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
   </nav>
   <div class="nav-end">
-    <span class="nav-time" id="clock">—</span>
-    <div class="lang" role="group" data-i18n-aria="m.lang" aria-label="Langue">
-      <button type="button" data-lang="fr" class="on" aria-pressed="true">FR</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+    <button class="theme" id="themeBtn" type="button" aria-label="Switch to dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.400 1.400M5.600 18.400 7 17M17 7l1.400-1.400" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <a class="btn btn-sm" href="#contact" data-i18n="nav.cta">Get in touch</a>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
   </div>
 </header>
 
-<main id="top">
-
-<!-- HERO -->
-<section class="hero">
-  
-
-  <h1 class="hero-title" data-lines>
-    <span class="ln"><span><span data-i18n="hero.l1">Je monte</span> <b class="pill pill-a" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></b></span></span>
-    <span class="ln"><span><b class="pill pill-b" aria-hidden="true"><s></s></b> <span data-i18n="hero.l2">des vidéos</span></span></span>
-    <span class="ln"><span><span data-i18n="hero.l3a">qui</span> <em data-i18n="hero.l3b">captent</em> <span data-i18n="hero.l3c">l'attention.</span></span></span>
-  </h1>
-
-  <div class="hero-foot">
-    <p data-r data-i18n="hero.p">Monteur indépendant pour marques, créateurs et artistes. L'histoire d'abord, le rythme toujours.</p>
-    <div class="hero-cta" data-r>
-      <a href="#work" class="btn"><span data-i18n="hero.cta1">Voir les projets</span> <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-      <a href="#contact" class="btn ghost" data-i18n="hero.cta2">Me contacter</a>
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <p class="status mono"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.status">Open to full-time remote roles</span><span class="sep">/</span><span data-i18n="hero.loc">Algiers, Algeria · UTC+1</span></p>
+    <h1 class="hero-title"><span data-i18n="hero.h1a">I EDIT VIDEOS THAT MAKE PEOPLE</span> <em data-i18n="hero.h1b">STOP SCROLLING.</em></h1>
+    <p class="hero-role" data-i18n="hero.role">Social Media Video Editor &amp; Creative Video Producer</p>
+    <p class="hero-p" data-i18n="hero.p">I help brands, agencies and creators transform raw footage and creative ideas into engaging video content designed for today's digital platforms.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#work"><span data-i18n="hero.cta2">Explore my work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="btn btn-ghost" href="#contact"><span data-i18n="nav.cta">Get in touch</span></a>
     </div>
+    <ul class="hero-facts mono" aria-label="Specialties">
+      <li data-i18n="hero.f1">DTC &amp; performance ads</li>
+      <li data-i18n="hero.f2">UGC &amp; short-form</li>
+      <li data-i18n="hero.f3">AI-assisted production</li>
+      <li data-i18n="hero.f4">Captions EN · FR · AR</li>
+    </ul>
   </div>
+  <div class="hero-reel" id="heroReelTiles" aria-label="Selected work previews"></div>
+  <noscript><p class="fine">This portfolio needs JavaScript to show the video projects. Contact: <a href="mailto:jawadvideoeditor1@gmail.com">jawadvideoeditor1@gmail.com</a></p></noscript>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span data-i18n="tick.1"></span><span data-i18n="tick.2"></span><span data-i18n="tick.3"></span><span data-i18n="tick.4"></span><span data-i18n="tick.5"></span><span data-i18n="tick.1"></span><span data-i18n="tick.2"></span><span data-i18n="tick.3"></span><span data-i18n="tick.4"></span><span data-i18n="tick.5"></span></div></div>
-
-<div class="dark">
-<!-- REEL -->
-<section class="reel" id="reel">
-  <div class="reel-frame" id="reelFrame" data-cursor="Lecture">
-    <video id="reelVideo" muted loop playsinline preload="metadata"></video>
-    <div class="reel-ph" id="reelPh"><span>Showreel</span><small>Ajoutez votre showreel dans script.js</small></div>
-    <span class="play lg" aria-hidden="true"></span>
-    <div class="reel-bar"><span>Showreel</span><span id="reelTime">00:00</span></div>
-  </div>
-</section>
-
-<!-- WORK -->
-<section class="work" id="work">
-  <div class="sec-top">
-    <h2 data-lines><span class="ln"><span data-i18n="work.title">Projets choisis</span></span></h2>
-    <div class="filters" id="filters" role="tablist"></div>
-  </div>
-  <div class="grid" id="grid"></div>
-</section>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="label" data-i18n="about.label">À propos</div>
-  <p class="bio" data-i18n="about.bio">Monteur vidéo, je crée des Reels, des vidéos produit en hypermotion IA et des UGC IA pour des marques de beauté, de parfum et d'immobilier. Une accroche forte, un rythme précis et des sous-titres lisibles.</p>
-  <div class="about-tools">
-    <div class="label" data-i18n="about.tools">Outils</div>
-    <div class="tools">
-    <span class="t t1"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><rect y=".3" width="24" height="23.4" rx="4.25" fill="#9999ff"/><path fill="#00005b" d="M10.15 8.42a2.93 2.93 0 00-1.18-.2 13.9 13.9 0 00-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03a1.45 1.45 0 00-.93-1.46zM19.75.3H4.25A4.25 4.25 0 000 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.09 11.65c-.4.56-.96.98-1.61 1.22-.68.25-1.43.34-2.25.34l-.5-.01-.43-.01v3.21a.12.12 0 01-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01.76-.02.87-.02.91-.01c.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.15.42.23.85.23 1.3 0 .86-.2 1.57-.6 2.13zm6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 00-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 01-.16-.12v-5.58l-.01-.75-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 01.07-.11h1.78c.1 0 .18.07.2.16a3.03 3.03 0 01.13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 011.52-.39c.07-.01.13.04.14.11v.04z"/></svg><b>Premiere Pro</b><small data-i18n="tool.pr">Montage</small></span>
-    <span class="t t2"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><rect y=".3" width="24" height="23.4" rx="4.25" fill="#9999ff"/><path fill="#00005b" d="M8.54 10.73c-.1-.31-.19-.61-.29-.92s-.19-.6-.27-.89c-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.13.51-.29.98-.44 1.4h2.54c-.06-.21-.14-.46-.23-.72-.09-.27-.18-.56-.27-.86zm8.58-.29c-.55-.03-1.07.26-1.33.76-.12.23-.19.47-.22.72h2.109c.26 0 .45 0 .57-.01.08-.01.16-.03.23-.08v-.1c0-.13-.021-.25-.061-.37-.178-.56-.708-.94-1.298-.92zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.04 16.511h-2.09c-.07.01-.14-.041-.16-.11l-.82-2.4H5.92l-.76 2.36c-.02.09-.1.15-.19.14H3.09c-.11 0-.14-.06-.11-.18L6.2 7.39c.03-.1.06-.19.1-.31.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.07 0 .12.03.13.08l3.65 10.25c.03.11.001.161-.1.161zm7.851-3.991c-.021.189-.031.33-.041.42-.01.07-.069.13-.14.13-.06 0-.17.01-.33.021-.159.02-.35.029-.579.029-.23 0-.471-.04-.73-.04h-3.17c.039.31.14.62.31.89.181.271.431.48.729.601.4.17.841.26 1.281.25.35-.011.699-.04 1.039-.11.311-.039.61-.119.891-.23.05-.039.08-.02.08.08v1.531c0 .039-.01.08-.021.119-.021.03-.04.051-.069.07-.32.14-.65.24-1 .3-.471.09-.94.13-1.42.12-.761 0-1.4-.12-1.92-.35-.49-.211-.921-.541-1.261-.95-.319-.39-.55-.83-.69-1.31-.14-.471-.209-.961-.209-1.461 0-.539.08-1.07.25-1.59.16-.5.41-.96.75-1.37.33-.4.739-.72 1.209-.95.471-.23 1.03-.31 1.67-.31.531-.01 1.06.09 1.55.31.41.18.77.45 1.05.8.26.34.47.72.601 1.14.129.4.189.81.189 1.22 0 .24-.01.45-.019.64z"/></svg><b>After Effects</b><small data-i18n="tool.ae">Motion design</small></span>
-    <span class="t t3"><span class="logo logo-cc"><img src="images/logos/capcut.png" alt="" width="30" height="30"></span><b>CapCut Pro</b><small data-i18n="tool.cc">Reels &amp; effets</small></span>
+<!-- ============ RESULTS ============ -->
+<section class="section" id="results" aria-labelledby="resTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker mono"><span>01</span><span data-i18n="res.kicker">Results</span></p>
+      <h2 id="resTitle" data-i18n="res.title">Campaign exposure</h2>
+      <p class="sec-p" data-i18n="res.p">Campaign-level data from the agency ad accounts of DTC brands whose videos I edited.</p>
     </div>
+
+    <div class="warn" role="note">
+      <strong data-i18n="res.warn">Read before the numbers</strong>
+      <p data-i18n="res.warn.p">These totals cover every creative, editor and campaign in the accounts. They are not attributable to a single video or to my work alone. I show them as context for the scale my videos ran at, not as the results of my editing.</p>
+    </div>
+
+    <div class="panels">
+      <article class="panel">
+        <header><h3 data-i18n="res.meta">Meta Ads campaign data</h3><p class="mono" data-i18n="res.meta.range">Aug 16, 2025 – Nov 16, 2026 · totals row, Meta Ads Manager</p></header>
+        <dl class="stats">
+          <div><dt data-i18n="res.spent">Amount spent</dt><dd><b class="num" data-to="150490.81" data-dec="2" data-prefix="$">$150,490.81</b></dd></div>
+          <div><dt data-i18n="res.impr">Impressions</dt><dd><b class="num" data-to="215495606">215,495,606</b></dd></div>
+          <div><dt data-i18n="res.reach">Reach</dt><dd><b class="num" data-to="13184874">13,184,874</b></dd></div>
+        </dl>
+        <button class="proof" type="button" data-zoom="media/results/meta-ads-campaign-totals.webp" data-alt="Meta Ads Manager totals row, cropped">
+          <img src="media/results/meta-ads-campaign-totals.webp" alt="Meta Ads Manager header and totals row, cropped" width="1140" height="106" loading="lazy">
+          <span class="mono" data-i18n="res.proof">View cropped screenshot</span>
+        </button>
+      </article>
+
+      <article class="panel">
+        <header><h3 data-i18n="res.tiktok">TikTok Ads campaign data</h3><p class="mono" data-i18n="res.tiktok.range">Jan 1 – Nov 16, 2026 · total of 51 records, TikTok Business Center</p></header>
+        <dl class="stats stats-6">
+          <div><dt data-i18n="res.spent">Amount spent</dt><dd><b class="num" data-to="86241.62" data-dec="2" data-prefix="$">$86,241.62</b></dd></div>
+          <div><dt data-i18n="res.impr">Impressions</dt><dd><b class="num" data-to="213203765">213,203,765</b></dd></div>
+          <div><dt data-i18n="res.clicks">Clicks</dt><dd><b class="num" data-to="1545583">1,545,583</b></dd></div>
+          <div><dt data-i18n="res.conv">Conversions</dt><dd><b class="num" data-to="30517">30,517</b></dd></div>
+          <div><dt data-i18n="res.ctr">CTR</dt><dd><b class="num" data-to="0.72" data-dec="2" data-suffix="%">0.72%</b></dd></div>
+          <div><dt data-i18n="res.cpa">CPA</dt><dd><b class="num" data-to="2.83" data-dec="2" data-prefix="$">$2.83</b></dd></div>
+        </dl>
+        <p class="mini mono"><span><span data-i18n="res.cpc">CPC</span> $0.06</span><span><span data-i18n="res.cpm">CPM</span> $0.40</span></p>
+        <button class="proof" type="button" data-zoom="media/results/tiktok-ads-campaign-totals.webp" data-alt="TikTok Business Center totals row, cropped">
+          <img src="media/results/tiktok-ads-campaign-totals.webp" alt="TikTok Business Center header and totals row, cropped" width="1560" height="74" loading="lazy">
+          <span class="mono" data-i18n="res.proof">View cropped screenshot</span>
+        </button>
+      </article>
+    </div>
+    <p class="fine"><span data-i18n="res.proofnote">Screenshots are cropped to the header and totals rows; account names and IDs are removed.</span> <span data-i18n="res.ctx">The TikTok accounts shown include EGO, Dentavia and Glow Me campaigns, among others.</span></p>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="label" data-i18n="svc.label">Services</div>
-  <ul class="svc-list">
-    <li class="svc"><span class="idx">01</span><h3 data-i18n="svc1.t">Reels &amp; contenus verticaux</h3><p data-i18n="svc1.p">Reels, TikToks et Shorts pensés pour la rétention : accroches, rythme, sous-titres et son.</p></li>
-    <li class="svc"><span class="idx">02</span><h3 data-i18n="svc2.t">Vidéos produit IA &amp; hypermotion</h3><p data-i18n="svc2.p">Visuels produit générés par IA et animés en hypermotion : mouvements de caméra impossibles, transitions fluides, rendu premium.</p></li>
-    <li class="svc"><span class="idx">03</span><h3 data-i18n="svc3.t">Accroches &amp; sous-titres</h3><p data-i18n="svc3.p">Des hooks percutants dans les premières secondes et des sous-titres dynamiques pour maximiser la rétention.</p></li>
-    <li class="svc"><span class="idx">04</span><h3 data-i18n="svc4.t">Motion design &amp; effets</h3><p data-i18n="svc4.p">Transitions, effets visuels et habillage graphique pour des vidéos qui se démarquent.</p></li>
-  </ul>
+<!-- ============ WORK ============ -->
+<section class="section" id="work" aria-labelledby="workTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker mono"><span>02</span><span data-i18n="work.kicker">Work</span></p>
+      <h2 id="workTitle" data-i18n="work.title">Selected work</h2>
+      <p class="sec-p" data-i18n="work.p">Every project opens into a short case study: the objective, what I did and how the edit works.</p>
+    </div>
+    <div class="filters" id="filters" role="tablist" aria-label="Project categories"></div>
+    <div id="cats"></div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="c-grid">
-    <div class="c-main">
-      <div class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z"/></svg></div>
-      <h2 data-i18n-html="contact.h2">Vous avez<br>une <em>idée&nbsp;?</em></h2>
-      <p class="c-type"><span data-i18n="contact.pre">Transformons-la en</span> <b id="typed"></b><i class="caret"></i></p>
-      <div class="c-actions">
-        <a href="https://wa.me/213775904983?text=Bonjour%20!%20J%27ai%20une%20id%C3%A9e%20de%20projet%20vid%C3%A9o%20%F0%9F%92%A1" class="wa-btn" target="_blank" rel="noopener" data-cursor="WhatsApp">
-          <span class="wa-ic"><svg viewBox="0 0 32 32"><path fill="currentColor" d="M16.02 3C8.84 3 3.02 8.82 3.02 16c0 2.3.6 4.54 1.74 6.52L3 29l6.64-1.74A12.95 12.95 0 0 0 16.02 29C23.2 29 29 23.18 29 16S23.2 3 16.02 3Zm0 23.7c-1.95 0-3.86-.53-5.53-1.52l-.4-.24-3.94 1.03 1.05-3.84-.26-.4A10.66 10.66 0 0 1 5.3 16c0-5.9 4.8-10.7 10.72-10.7S26.7 10.1 26.7 16s-4.8 10.7-10.68 10.7Zm5.87-8c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.22.32-.83 1.04-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.62c-.21 0-.56.08-.85.4-.3.32-1.12 1.1-1.12 2.67s1.15 3.1 1.3 3.32c.16.21 2.26 3.45 5.47 4.84.76.33 1.36.53 1.82.68.77.24 1.46.2 2.01.12.61-.09 1.9-.78 2.16-1.53.27-.75.27-1.4.19-1.53-.08-.13-.3-.21-.62-.37Z"/></svg></span>
-          <span class="wa-tx"><small data-i18n="wa.label">Sur WhatsApp</small><b data-i18n="wa.cta">Écrivez-moi</b></span>
-          <svg class="c-go" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
-      </div>
+<!-- ============ BRANDS ============ -->
+<section class="section" id="brands" aria-labelledby="brandsTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker mono"><span>03</span><span data-i18n="brands.kicker">Brands</span></p>
+      <h2 id="brandsTitle" data-i18n="brands.title">Brands I've worked with</h2>
+      <p class="sec-p" data-i18n="brands.p">Projects I contributed to, including campaigns produced inside an agency. I was not directly employed by every brand.</p>
     </div>
+    <ul class="brands" id="brandGrid"></ul>
+    <p class="fine" data-i18n="brands.note">Follower counts are from each brand's own Instagram profile, per the screenshots supplied. They describe the brand's audience, not video views, campaign reach or my personal audience.</p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" aria-labelledby="aboutTitle">
+  <div class="wrap about">
+    <div class="about-main">
+      <p class="kicker mono"><span>04</span><span data-i18n="about.kicker">About</span></p>
+      <h2 id="aboutTitle" data-i18n="about.title">A video editor with a media buyer's eye.</h2>
+      <p data-i18n="about.p1">I'm a Social Media Video Editor and Creative Video Producer with experience across agency projects, freelance productions and independent creative work. I specialize in DTC advertising, UGC-style content, short-form social media videos and AI-assisted creative production.</p>
+      <p data-i18n="about.p2">My approach goes beyond editing. I enjoy contributing to creative ideas, developing hooks, selecting footage and transforming concepts into engaging videos.</p>
+      <p data-i18n="about.p3">Before editing full-time, I ran my own ecommerce business and Meta ad campaigns, so I read CTR and CPA when judging which hooks to keep, not just how a video looks.</p>
+      <p data-i18n="about.p4">I'm currently looking to collaborate with international creative agencies, brands and content teams through full-time remote opportunities.</p>
+
+      <h3 class="h-sm mono" data-i18n="how.title">How I work</h3>
+      <ol class="how">
+        <li><b data-i18n="how1.t">Brief &amp; hook</b><span data-i18n="how1.p">I get clear on the product, the audience and the promise, then look for the opening that stops the scroll.</span></li>
+        <li><b data-i18n="how2.t">Footage selection</b><span data-i18n="how2.p">I pick the strongest moments and the proof shots. A good edit starts with a good selection.</span></li>
+        <li><b data-i18n="how3.t">Edit &amp; pacing</b><span data-i18n="how3.p">Cuts, captions, sound and hook variations, with feedback applied quickly.</span></li>
+        <li><b data-i18n="how4.t">Delivery</b><span data-i18n="how4.p">Platform-ready files in 9:16, 4:5 and 1:1, organised and on deadline.</span></li>
+      </ol>
+    </div>
+
+    <aside class="about-side">
+      <h3 class="h-sm mono" data-i18n="exp.title">Experience</h3>
+      <ol class="timeline">
+        <li>
+          <p class="mono"><span data-i18n="exp1.d">Oct 2025 – Oct 2026</span></p>
+          <h4 data-i18n="exp1.t">Video Editor — Advertising &amp; Social Creatives</h4>
+          <p class="org" data-i18n="exp1.o">ISR Services (agency)</p>
+          <p data-i18n="exp1.p">Edited UGC, Reels, paid video ads and product animations for Algerian brands including EGO by Trapking, Bio Power, Celanie Bio, Glow Me and Dentavia. Built hook and format variations, created AI-assisted content and delivered platform-ready exports in 9:16, 4:5 and 1:1.</p>
+        </li>
+        <li>
+          <p class="mono"><span data-i18n="exp2.d">2022 – Present</span></p>
+          <h4 data-i18n="exp2.t">Freelance Video Editor &amp; Scriptwriter</h4>
+          <p class="org" data-i18n="exp2.o">Independent</p>
+          <p data-i18n="exp2.p">Promotional and branding videos for a shopping mall and a women's clothing brand; ecommerce video ads for online sellers, with French subtitles. Briefs, revisions and deadlines handled independently and remotely.</p>
+        </li>
+        <li>
+          <p class="mono"><span data-i18n="exp3.d">2020 – 2025</span></p>
+          <h4 data-i18n="exp3.t">Ecommerce Entrepreneur &amp; Meta Ads Media Buyer</h4>
+          <p class="org" data-i18n="exp3.o">Self-employed</p>
+          <p data-i18n="exp3.p">Built and managed campaigns in Meta Business Manager, analysed CTR and CPA to decide which creatives to scale or cut, and produced the ad creatives for my own products.</p>
+        </li>
+      </ol>
+
+      <h3 class="h-sm mono" data-i18n="skills.title">Skills &amp; tools</h3>
+      <ul class="skills">
+        <li class="primary"><b data-i18n="sk.edit">Editing</b><span data-i18n="sk.edit.p">CapCut (primary tool), Adobe Premiere Pro</span></li>
+        <li><b data-i18n="sk.craft">Short-form craft</b><span data-i18n="sk.craft.p">Hooks, pacing and retention, captions (English, French, Arabic), transitions, B-roll, on-screen text, music and sound design, colour correction, audio cleanup, multi-format exports 9:16 · 4:5 · 1:1</span></li>
+        <li><b data-i18n="sk.ai">AI production</b><span data-i18n="sk.ai.p">Seedance, Veo, Omni Flash, Higgsfield, Nano Banana, Google Flow, ElevenLabs, ChatGPT, Claude: avatars, voice-overs, generated scenes and assets</span></li>
+        <li><b data-i18n="sk.paid">Paid social literacy</b><span data-i18n="sk.paid.p">Meta Ads, TikTok Ads, creative testing, reading CTR and CPA</span></li>
+        <li><b data-i18n="sk.script">Scriptwriting</b><span data-i18n="sk.script.p">UGC and DTC scripts, hooks, offers, proof and calls to action</span></li>
+      </ul>
+
+      <h3 class="h-sm mono" data-i18n="lang.title">Languages</h3>
+      <ul class="langs mono"><li data-i18n="lang.en">English — fluent</li><li data-i18n="lang.fr">French — fluent</li><li data-i18n="lang.ar">Arabic — native</li><li data-i18n="lang.de">German — basic</li></ul>
+
+      <h3 class="h-sm mono" data-i18n="avail.title">Availability</h3>
+      <p data-i18n="avail.p">Open to full-time remote roles and international creative collaborations. Based in Algiers (UTC+1), a time zone that overlaps easily with Europe and the Middle East.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact" aria-labelledby="contactTitle">
+  <div class="wrap">
+    <p class="kicker mono"><span>05</span><span data-i18n="contact.kicker">Contact</span></p>
+    <h2 id="contactTitle"><span data-i18n="contact.h">HAVE A PROJECT IN MIND?</span> <em data-i18n="contact.h2">LET'S CREATE SOMETHING THAT STANDS OUT.</em></h2>
+    <p class="sec-p" data-i18n="contact.p">I reply to agencies, brands and recruiters. Tell me what you're building.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" id="cEmail" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="contact.email">Email me</span></a>
+      <a class="btn btn-ghost" id="cWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm4.4 12.2c-.2.5-1.1 1-1.6 1-.4.1-.9.1-1.5-.1-3-1.1-4.9-4.1-5.1-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.8-.1 1.3z" fill="currentColor"/></svg><span data-i18n="contact.wa">WhatsApp</span></a>
+      <a class="btn btn-ghost" id="cLi" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v4H4zM4 10h4v10H4zM10 10h4v1.6c.7-1.2 2-1.9 3.5-1.9 3 0 3.5 2 3.5 4.5V20h-4v-5c0-1.200-.2-2-1.400-2-1.300 0-1.600.9-1.600 2v5h-4z" fill="currentColor"/></svg><span data-i18n="contact.li">LinkedIn</span></a>
+      <a class="btn btn-ghost" id="cCv" href="#" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="contact.cv">Download CV</span></a>
+    </div>
+    <p class="mono email-line"><span id="cEmailText"></span><button class="link-btn" id="cCopy" type="button" data-i18n="contact.copy">Copy email</button><a id="cPhone" class="phone" href="#"></a></p>
   </div>
 </section>
 </main>
 
 <footer class="footer">
-  <span>© <span id="yr"></span> Djaouad. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
-  <nav><a href="#work" data-i18n="nav.work">Projets</a><a href="#about" data-i18n="nav.about">À propos</a><a href="#services" data-i18n="nav.services">Services</a><a href="#contact" data-i18n="nav.contact">Contact</a></nav>
-  <a href="#top" class="u" data-i18n="footer.top">Haut de page ↑</a>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Djaouad Hassounat. <span data-i18n="foot.rights">All rights reserved.</span></span>
+    <nav aria-label="Footer"><a href="#work" data-i18n="nav.work">Work</a><a href="#about" data-i18n="nav.about">About</a><a href="#contact" data-i18n="nav.contact">Contact</a></nav>
+    <a href="#top" data-i18n="foot.top">Back to top ↑</a>
+  </div>
 </footer>
 
-<!-- Lecteur -->
-<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+<!-- ============ PROJECT MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-hidden="true" hidden>
   <div class="modal-bg" data-close></div>
-  <button class="modal-x" data-close data-i18n-aria="m.close" aria-label="Fermer" data-i18n="m.close">Fermer</button>
   <div class="modal-box">
-    <div class="player" id="player"></div>
-    <div class="modal-info">
+    <button class="m-close" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></button>
+    <div class="m-media" id="mMedia"></div>
+    <div class="m-body" id="mBody">
+      <p class="mono m-kicker" id="mKicker"></p>
       <h3 id="mTitle"></h3>
-      <p id="mDesc"></p>
-      <ul id="mMeta"></ul>
+      <div id="mContent"></div>
+      <div class="m-nav">
+        <button type="button" id="mPrev" class="link-btn" data-i18n="m.prev">← Previous project</button>
+        <button type="button" id="mNext" class="link-btn" data-i18n="m.next">Next project →</button>
+      </div>
     </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="i18n.js"></script>
-<script src="script.js"></script>
-<script src="contact.js"></script>
-<script src="player.js"></script>
+<!-- ============ IMAGE LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot" hidden>
+  <button type="button" class="m-close" data-lb-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></button>
+  <img id="lbImg" alt="">
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
