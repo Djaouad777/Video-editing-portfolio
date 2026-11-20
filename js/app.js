@@ -230,12 +230,12 @@
 
   /* ---------------- contact ---------------- */
   function renderContact() {
-    $("#cEmail").href = `mailto:${SITE.email}?subject=${encodeURIComponent(ui("mail.subject"))}`;
-    $("#cWa").href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMsg[lang === "fr" ? 1 : 0])}`;
+    $$("#cEmail, [data-c=email]").forEach((a) => (a.href = `mailto:${SITE.email}?subject=${encodeURIComponent(ui("mail.subject"))}`));
+    $$("#cWa, [data-c=wa]").forEach((a) => (a.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMsg[lang === "fr" ? 1 : 0])}`));
     $("#cEmailText").textContent = SITE.email;
     const ph = $("#cPhone"); ph.href = "tel:" + SITE.phone; ph.textContent = SITE.phoneLabel;
-    const li = $("#cLi"); if (SITE.linkedin) { li.href = SITE.linkedin; li.hidden = false; } else li.hidden = true;
-    $("#cCv").href = SITE.cv;
+    $$("#cLi, [data-c=li]").forEach((li) => { if (SITE.linkedin) { li.href = SITE.linkedin; li.hidden = false; } else li.hidden = true; });
+    $$("#cCv, [data-c=cv]").forEach((a) => (a.href = SITE.cv));
   }
   $("#cCopy").addEventListener("click", async (e) => {
     const b = e.currentTarget;

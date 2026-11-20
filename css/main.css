@@ -399,3 +399,11 @@ button.brand-card:hover { background: var(--surface); }
 /* fix: category header stacks in one column on phones (the tools line must not create a 2nd column) */
 @media (max-width: 680px) { .cat-head { grid-template-columns: minmax(0, 1fr); } .cat-head > * { grid-column: 1; } .cat-n { grid-row: auto; } }
 @media (max-width: 680px) { .cat-head .cat-tools { grid-column: 1; margin-top: 8px; } }
+
+/* quick-contact strip directly under the hero */
+.quick { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px; padding-bottom: clamp(40px, 6vw, 72px); }
+@media (max-width: 680px) {
+  .quick { gap: 10px; }
+  .quick .btn { flex: 1 1 calc(50% - 5px); justify-content: center; padding: 0 14px; font-size: .92rem; }
+  .quick .btn[hidden] { display: none !important; }
+}
