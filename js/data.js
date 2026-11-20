@@ -6,7 +6,7 @@
    ========================================================================== */
 
 window.SITE = {
-  email: "jawadvideoeditor1@gmail.com",
+  email: "djaouadhassounat@gmail.com",
   whatsapp: "213775904983",                       // from the existing site + CV
   whatsappMsg: ["Hi Djaouad! I'd like to talk about a video project.", "Bonjour Djaouad ! J'aimerais parler d'un projet vidéo."],
   linkedin: "https://www.linkedin.com/in/djaouad-hassounat-b3a7a9420",
@@ -417,14 +417,14 @@ window.FR = {
   "brands.proj": "projet(s)",
   "res.kicker": "Résultats", "res.title": "Exposition aux campagnes",
   "res.p": "Données au niveau des campagnes issues des comptes publicitaires de l'agence pour les marques DTC dont j'ai monté les vidéos.",
-  "res.warn": "À lire avant les chiffres",
-  "res.warn.p": "Ces chiffres couvrent l'ensemble des créations, des monteurs et des campagnes des comptes. Ils ne sont pas attribuables à une seule vidéo ni à mon travail seul. Je les présente comme contexte d'exposition, pas comme les résultats de mon montage.",
   "res.meta": "Données de campagne Meta Ads", "res.tiktok": "Données de campagne TikTok Ads",
-  "res.meta.range": "16 août 2025 – 16 nov. 2026 · total de la vue Meta Ads Manager",
-  "res.tiktok.range": "1er janv. – 16 nov. 2026 · total sur 51 enregistrements, TikTok Business Center",
+  "res.meta.range": "16 août 2025 – 16 nov. 2026",
+  "res.tiktok.range": "1er janv. – 16 nov. 2026 · total de 51 enregistrements",
   "res.spent": "Dépenses", "res.impr": "Impressions", "res.reach": "Portée", "res.clicks": "Clics", "res.ctr": "CTR", "res.conv": "Conversions", "res.cpa": "CPA", "res.cpc": "CPC", "res.cpm": "CPM",
-  "res.proof": "Voir la capture recadrée", "res.proofnote": "Capture recadrée sur les lignes d'en-tête et de total ; noms de comptes et identifiants masqués.",
+  "res.proof": "Voir la capture recadrée", "res.proofnote": "Captures affichées telles qu'exportées des plateformes publicitaires. Les noms de compte, les numéros d'identifiant et le nom du compte professionnel sont masqués.",
   "res.ctx": "Les comptes TikTok affichés incluent des campagnes EGO, Dentavia et Glow Me, entre autres.",
+  "res.shot.meta": "Meta Ads Manager", "res.shot.tiktok": "TikTok Business Center", "res.shot.zoom": "Cliquer pour agrandir",
+  "res.h.impr": "Nombre d'affichages des publicités", "res.h.reach": "Comptes uniques ayant vu les publicités", "res.h.clicks": "Clics sur les publicités", "res.h.ctr": "Part des impressions ayant généré un clic", "res.h.conv": "Conversions enregistrées par TikTok", "res.h.cpa": "Coût moyen par conversion", "res.h.cpc": "Coût moyen par clic", "res.h.cpm": "Coût pour 1 000 impressions",
   "about.kicker": "À propos", "about.title": "Monteur vidéo avec un regard de media buyer.",
   "about.p1": "Je suis monteur vidéo réseaux sociaux et producteur vidéo créatif, avec une expérience en agence, en freelance et sur des projets créatifs indépendants. Je me spécialise dans la publicité DTC, le contenu de style UGC, les vidéos courtes pour les réseaux sociaux et la production créative assistée par IA.",
   "about.p2": "Mon approche va au-delà du montage. J'aime contribuer aux idées créatives, développer des accroches, sélectionner les rushes et transformer des concepts en vidéos engageantes.",

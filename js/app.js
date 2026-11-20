@@ -216,7 +216,7 @@
     })(t0);
   }
   if (!reduced && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { countUp(e.target); io.unobserve(e.target); } }), { threshold: .6 });
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { countUp(e.target); io.unobserve(e.target); } }), { threshold: .25 });
     $$(".num").forEach((n) => { n.textContent = (n.dataset.prefix || "") + fmtNum(0, +(n.dataset.dec || 0)) + (n.dataset.suffix || ""); io.observe(n); });
   }
   const lb = $("#lightbox"), lbImg = $("#lbImg"); let lbOpener = null;
