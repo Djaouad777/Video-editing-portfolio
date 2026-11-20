@@ -350,7 +350,7 @@ window.PROJECTS = [
     appr: ["A different rhythm from the ad work: slower, music-led, and focused on texture. It also shows how I handle grading outside product advertising.",
            "Un rythme différent du travail publicitaire : plus lent, guidé par la musique et centré sur la texture. Il montre aussi comment j'aborde l'étalonnage hors publicité produit."] },
 
-  { slug: "prestige-promotion-real-estate", cat: "brand", brand: "prestige", dur: "0:26", fmt: "9:16", legacy: "reel-2",
+  { slug: "prestige-promotion-real-estate", cat: "ugc", brand: "prestige", dur: "0:26", fmt: "9:16", legacy: "reel-2",
     title: ["Prestige Promotion — Real-Estate Reel", "Prestige Promotion — Reel immobilier"],
     ov:  ["Real-estate reel for Prestige Promotion: a presenter-led walkthrough of apartments with an animated title and a fast, smooth pace.",
           "Reel immobilier pour Prestige Promotion : visite d'appartements menée par une présentatrice, avec titre animé et rythme fluide."],
@@ -363,7 +363,33 @@ window.PROJECTS = [
     appr: ["The walkthrough follows a natural route (corridor, living room, kitchen, entrance) and closes on the building so the viewer remembers the project.",
            "La visite suit un parcours naturel (couloir, salon, cuisine, entrée) et se termine sur l'immeuble pour que le spectateur retienne le projet."] },
 
-  { slug: "talking-head-creator-edit", cat: "brand", brand: "personal", dur: "0:29", fmt: "9:16", legacy: "reel-5",
+  { slug: "dentist-service-promotion", cat: "ugc", brand: "dentist", dur: "0:24", fmt: "9:16",
+    title: ["Dentist — Service Promotion", "Dentiste — Promotion de services"],
+    ov:  ["Short promotional video for a dentist's services: the dentist speaks to camera, treatment footage is cut in as proof, and the video closes on a WhatsApp call to action.",
+          "Courte vidéo promotionnelle pour les services d'un dentiste : le dentiste s'adresse à la caméra, des images de soins servent de preuve, et la vidéo se termine sur un appel à contacter via WhatsApp."],
+    obj: ["Explain a dental concern in plain words, show the care in action and make it easy to get in touch.",
+          "Expliquer un problème dentaire en termes simples, montrer les soins en action et faciliter la prise de contact."],
+    roles: ["select", "edit", "captions", "deliver"],
+    feat: [["Bold Arabic keyword captions with small animated icons (tooth, clock, WhatsApp)", "Sous-titres arabes avec mots-clés en couleur et petites icônes animées (dent, horloge, WhatsApp)"],
+           ["Treatment close-ups cut in against the talking shots", "Gros plans de soins intercalés avec les plans face caméra"],
+           ["WhatsApp call to action to close", "Appel à l'action WhatsApp en conclusion"]],
+    appr: ["Medical content can feel cold, so the dentist stays in a friendly, direct frame and coloured keywords with small icons guide the viewer through each point. Treatment footage appears on the key lines as proof.",
+           "Le contenu médical peut sembler froid : le dentiste reste dans un cadre direct et chaleureux, et des mots-clés colorés avec de petites icônes guident le spectateur à chaque étape. Les images de soins apparaissent sur les phrases clés comme preuve."] },
+
+  { slug: "omar-immobilier-apartment", cat: "brand", brand: "omar", dur: "1:12", fmt: "9:16",
+    title: ["Omar Immobilier — Apartment Promotion", "Omar Immobilier — Promotion d'un appartement"],
+    ov:  ["Walkthrough video promoting a high-end apartment for Omar Immobilier, from the terrace and living areas to the bedrooms, bathroom and lift, with animated gold captions naming each space.",
+          "Vidéo de visite pour promouvoir un appartement haut de gamme pour Omar Immobilier, de la terrasse et des salons aux chambres, à la salle de bain et à l'ascenseur, avec des sous-titres dorés animés nommant chaque espace."],
+    obj: ["Give a remote buyer a clear sense of space, light and layout in about a minute.",
+          "Donner à un acheteur à distance une idée claire de l'espace, de la lumière et de l'agencement en environ une minute."],
+    roles: ["select", "edit", "motion", "deliver"],
+    feat: [["First-person walkthrough that follows a natural route through the apartment", "Visite à la première personne suivant un parcours naturel dans l'appartement"],
+           ["Animated gold text naming each space and the key facts (surface area, price)", "Texte doré animé nommant chaque espace et les informations clés (surface, prix)"],
+           ["Golden-hour terrace and city-view shots", "Plans de la terrasse et de la vue sur la ville à l'heure dorée"],
+           ["Branded lower-third at the start", "Bandeau de marque au début"]],
+    appr: ["The camera moves like a visitor would, so the viewer understands how the rooms connect. Short gold captions appear on each space and on the key facts, so the video can be followed with the sound off.",
+           "La caméra se déplace comme le ferait un visiteur, pour que le spectateur comprenne comment les pièces s'enchaînent. De courts sous-titres dorés apparaissent sur chaque espace et sur les informations clés, afin de suivre la vidéo sans le son."] },
+  { slug: "talking-head-creator-edit", cat: "ugc", brand: "personal", dur: "0:29", fmt: "9:16", legacy: "reel-5",
     title: ["Talking-Head — Creator Edit (Personal Exercise)", "Face caméra — Montage créateur (exercice personnel)"],
     ov:  ["A personal editing exercise: word-by-word animated captions, text behind the subject, animated icons and motion design.",
           "Exercice de montage personnel : sous-titres animés mot par mot, texte derrière le sujet, icônes animées et motion design."],
@@ -390,11 +416,12 @@ window.BRANDS = [
   { id: "bvita",    name: "BVita" },
   { id: "cg",       name: "CG Women Clothing" },
   { id: "maruderm", name: "Maruderm" },
+  { id: "omar",      name: "Omar Immobilier" },
   { id: "primemode", name: "Prime Mode" },
   { id: "dontpanic", name: "Don't Panic" },
 ];
 // brand ids used on projects that are not "brands" in the logo wall (kept so every project has a label)
-window.BRAND_LABELS = { bags: "Bags (DTC)", creator: "Online creator", saas: "SaaS app", netexpo: "NetExpo", mosaic: "Mosaic artist", prestige: "Prestige Promotion", personal: "Personal exercise" };
+window.BRAND_LABELS = { dentist: "Dentist", bags: "Bags (DTC)", creator: "Online creator", saas: "SaaS app", netexpo: "NetExpo", mosaic: "Mosaic artist", prestige: "Prestige Promotion", personal: "Personal exercise" };
 
 /* ---------- French UI strings (English lives in index.html) ---------- */
 window.FR = {
@@ -468,7 +495,7 @@ window.FR = {
 };
 
 /* ---------- display order of the work categories (edit this list to reorder) ---------- */
-window.CAT_ORDER = ["ai", "brand", "ugc", "dtc"];
+window.CAT_ORDER = ["ai", "ugc", "brand", "dtc"];
 window.CATS.sort((a, b) => CAT_ORDER.indexOf(a.id) - CAT_ORDER.indexOf(b.id));
 window.CATS.forEach((c, i) => { c.n = String(i + 1).padStart(2, "0"); });
 window.PROJECTS.sort((a, b) => CAT_ORDER.indexOf(a.cat) - CAT_ORDER.indexOf(b.cat)); // keeps prev/next in the same order
